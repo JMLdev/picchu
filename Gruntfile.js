@@ -70,9 +70,36 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        assemble: {
+			options: {
+				partials: ['src/doc/partials/**/*.hbs'],
+				layout: ['src/doc/layouts/default.hbs'],
+				helpers: ['handlebars-helpers/*.js'],
+				flatten: true,
+				data: 'src/doc/data/*.json',
+			},
+			pages: {
+				src: ['src/doc/*.hbs'],
+				dest: 'dist/'
+			}
+		},
+
+		connect: {
+			server: {
+				options: {
+					port: 3000,
+					base: ['./', './dist/'],
+					hostname: 'localhost',
+					livereload: true,
+					open: true
+				}
+			}
+		}
     });
 
     // Set Grunt tasks
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'assemble']);
+    grunt.registerTask('server', ['connect', 'sass', 'autoprefixer', 'concat', 'uglify']);
 
 };
