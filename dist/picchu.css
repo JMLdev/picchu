@@ -313,6 +313,7 @@ dfn {
  * Known issue: no IE 6/7 normalization.
  */
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -3377,20 +3378,17 @@ button, .button, .button {
   outline: none;
   position: relative;
   padding: 0.55em 1.5em;
-  -webkit-transition: background-color 0.5s;
-          transition: background-color 0.5s;
+  transition: background-color 0.5s;
   line-height: 1.5;
   background-color: #0078D7;
   color: #FFFFFF; }
   button:hover, button:focus, .button:hover, .button:focus, .button:hover, .button:focus {
     text-decoration: none;
     background-color: #0060ac;
-    -webkit-transition: background-color 0s;
-            transition: background-color 0s; }
+    transition: background-color 0s; }
   button:active, .button:active, .button:active {
     background-color: #004881;
-    -webkit-transition: background-color 0s;
-            transition: background-color 0s; }
+    transition: background-color 0s; }
   button[disabled]:hover, button[disabled]:focus, .button[disabled]:hover, .button[disabled]:focus, .button[disabled]:hover, .button[disabled]:focus {
     background-color: #e4e4e4;
     color: #919191; }
@@ -3605,9 +3603,7 @@ label, input, textarea {
   display: inline-block;
   font-size: 15px;
   color: #2F2F2F;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   box-sizing: border-box; }
 
 label.disabled {
@@ -3667,9 +3663,7 @@ input[type="password"] {
     display: inline-block;
     font-size: 15px;
     color: #2F2F2F;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    appearance: none;
     border: 1px solid #767676;
     position: relative;
     padding: 0.4667em 2.8em 0.4667em 0.55em;
@@ -3725,10 +3719,7 @@ label.toggle {
     margin: 0 0.2em -0.3em 0;
     background-color: #FFFFFF;
     font-size: 15px;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none; }
+    user-select: none; }
   label.checkbox input,
   label.radio input,
   label.toggle input {
@@ -3804,8 +3795,7 @@ label.toggle .custom-control {
   width: 44px;
   height: 22px;
   border-radius: 1em;
-  -webkit-transition: background-color 0.2s;
-          transition: background-color 0.2s; }
+  transition: background-color 0.2s; }
   label.toggle .custom-control:before {
     content: '';
     position: absolute;
@@ -3817,8 +3807,7 @@ label.toggle .custom-control {
     height: 14px;
     border-radius: 50%;
     background-color: #2F2F2F;
-    -webkit-transition: left 0.5s;
-            transition: left 0.5s; }
+    transition: left 0.5s; }
 
 label.toggle input:checked ~ .custom-control {
   background-color: #0078D7;
@@ -3870,9 +3859,7 @@ label.toggle input[disabled] ~ span {
   margin-right: 0.25em; }
 
 input[type=range].slider {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 100%;
   margin: 3px 0; }
 
@@ -3902,8 +3889,7 @@ input[type=range].slider::-webkit-slider-thumb {
   border-radius: 50px;
   background: #0078D7;
   cursor: pointer;
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin-top: -3px; }
 
 input[type=range].slider::-webkit-slider-thumb:hover {
@@ -4103,7 +4089,6 @@ a {
         @media screen and (min-width: 768px) {
           .hero.inside-text .hero-banner.black-bg-grad:before,
           .hero.inside-text .hero-carousel .hero-carousel-slide.black-bg-grad:before {
-            background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); } }
     .hero.inside-text .hero-banner.white-bg-grad,
     .hero.inside-text .hero-carousel .hero-carousel-slide.white-bg-grad {
@@ -4114,7 +4099,6 @@ a {
         @media screen and (min-width: 768px) {
           .hero.inside-text .hero-banner.white-bg-grad:before,
           .hero.inside-text .hero-carousel .hero-carousel-slide.white-bg-grad:before {
-            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
             background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); } }
     .hero.inside-text .hero-banner.black-bgc:before,
     .hero.inside-text .hero-carousel .hero-carousel-slide.black-bgc:before {
@@ -4170,7 +4154,6 @@ a {
       @media screen and (min-width: 768px) and (min-width: 768px) {
         .hero.popout-text .hero-banner.black-bg-grad:before,
         .hero.popout-text .hero-carousel .hero-carousel-slide.black-bg-grad:before {
-          background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
           background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); } }
     @media screen and (min-width: 768px) {
         .hero.popout-text .hero-banner.white-bg-grad,
@@ -4182,7 +4165,6 @@ a {
       @media screen and (min-width: 768px) and (min-width: 768px) {
         .hero.popout-text .hero-banner.white-bg-grad:before,
         .hero.popout-text .hero-carousel .hero-carousel-slide.white-bg-grad:before {
-          background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
           background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); } }
     @media screen and (min-width: 768px) {
         .hero.popout-text .hero-banner.black-bgc:before,
@@ -4249,13 +4231,11 @@ a {
         color: white; }
         .banner.black-bg-grad:before {
           background: rgba(0, 0, 0, 0.65);
-          background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
           background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); }
       .banner.white-bg-grad {
         color: #2F2F2F; }
         .banner.white-bg-grad:before {
           background: rgba(255, 255, 255, 0.65);
-          background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
           background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); }
       .banner.black-bgc:before {
         background: rgba(0, 0, 0, 0.65); }

@@ -23,6 +23,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'dist/picchu.css': 'src/picchu.scss',
+                    'dist/site-style.css': 'src/site-style.scss',
                     'dist/picchu-namespace.css': 'src/picchu-namespace.scss'
                 }
             }
@@ -75,13 +76,43 @@ module.exports = function (grunt) {
 			options: {
 				partials: ['src/doc/partials/**/*.hbs'],
 				layout: ['src/doc/layouts/default.hbs'],
-				helpers: ['handlebars-helpers/*.js'],
 				flatten: true,
 				data: 'src/doc/data/*.json',
 			},
 			pages: {
-				src: ['src/doc/*.hbs'],
+				src: ['src/doc/*.hbs', 'src/doc/standards/*.hbs'],
 				dest: 'dist/'
+			}
+		},
+
+		watch: {
+			css: {
+				files: '**/*.scss',
+				tasks: ['sass'],
+				options: {
+				  livereload: true,
+				},
+			},
+			html: {
+				files: '**/*.hbs',
+				tasks: ['assemble'],
+				options: {
+					livereload: true,
+				}
+			},
+			data: {
+				files: '**/*.json',
+				tasks: ['assemble'],
+				options: {
+					livereload: true,
+				}
+			}
+			assets: {
+				files: 'src/assets/**/*',
+				tasks: ['copy'],
+				options: {
+					livereload: true,
+				}
 			}
 		},
 
@@ -89,17 +120,30 @@ module.exports = function (grunt) {
 			server: {
 				options: {
 					port: 3000,
-					base: ['./', './dist/'],
+					base: ['public', 'dist/'],
 					hostname: 'localhost',
 					livereload: true,
 					open: true
 				}
 			}
-		}
-    });
+		},
 
+		copy: {
+			assets: {
+				expand: true,
+				cwd: 'src/',
+				src: 'assets/**/*',
+				dest: 'dist/'
+			},
+		},
+
+		/* DESTRUCTIVE - don't change this config unless you know what you are doing! */
+		clean: {
+			dist: ["dist/**/*"]
+		},
+    });
     // Set Grunt tasks
-    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'assemble']);
-    grunt.registerTask('server', ['connect', 'sass', 'autoprefixer', 'concat', 'uglify']);
+    grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'assemble', 'copy']);
+    grunt.registerTask('server', ['sass', 'autoprefixer', 'concat', 'uglify', 'connect', 'watch']);
 
 };

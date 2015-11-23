@@ -9,11 +9,20 @@
 
     <title></title>
 
-    <link rel="stylesheet" href="css/picchu.min.css" />
+    <link rel="stylesheet" href="picchu.css" />
+    <link rel="stylesheet" href="site-style.css">
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="assets/js/master.js"></script>
 </head>
 
-<body>
+<body class="gray-l4-bgc layout-">
+    {{> header }}
+    <div class="ms-grid full zero-margin parent-grid">
+        <div class="ms-row">
+            {{> left-nav }}
+            {{> body }}
+        </div>
+    </div>
 </body>
 </html>
