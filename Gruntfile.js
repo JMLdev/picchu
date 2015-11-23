@@ -76,11 +76,14 @@ module.exports = function (grunt) {
 			options: {
 				partials: ['src/doc/partials/**/*.hbs'],
 				layout: ['src/doc/layouts/default.hbs'],
-				flatten: true,
-				data: 'src/doc/data/*.json',
+				data: 'data/*.json',
 			},
 			pages: {
-				src: ['src/doc/*.hbs', 'src/doc/standards/*.hbs'],
+
+				expand: true,
+				flatten: false,
+				cwd: 'src/doc',
+				src: ['*.hbs', 'standards/*.hbs'],
 				dest: 'dist/'
 			}
 		},
@@ -106,7 +109,7 @@ module.exports = function (grunt) {
 				options: {
 					livereload: true,
 				}
-			}
+			},
 			assets: {
 				files: 'src/assets/**/*',
 				tasks: ['copy'],
@@ -135,12 +138,7 @@ module.exports = function (grunt) {
 				src: 'assets/**/*',
 				dest: 'dist/'
 			},
-		},
-
-		/* DESTRUCTIVE - don't change this config unless you know what you are doing! */
-		clean: {
-			dist: ["dist/**/*"]
-		},
+		}
     });
     // Set Grunt tasks
     grunt.registerTask('default', ['sass', 'autoprefixer', 'cssmin', 'concat', 'uglify', 'assemble', 'copy']);

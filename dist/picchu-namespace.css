@@ -416,7 +416,6 @@ img {
   .picchu dfn {
     font-style: italic; }
   .picchu hr {
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0; }
   .picchu mark {
@@ -2743,17 +2742,20 @@ img {
     outline: none;
     position: relative;
     padding: 0.55em 1.5em;
-    transition: background-color 0.5s;
+    -webkit-transition: background-color 0.5s;
+            transition: background-color 0.5s;
     line-height: 1.5;
     background-color: #0078D7;
     color: #FFFFFF; }
     .picchu button:hover, .picchu button:focus, .picchu .button:hover, .picchu .button:focus, .picchu .button:hover, .picchu .button:focus {
       text-decoration: none;
       background-color: #0060ac;
-      transition: background-color 0s; }
+      -webkit-transition: background-color 0s;
+              transition: background-color 0s; }
     .picchu button:active, .picchu .button:active, .picchu .button:active {
       background-color: #004881;
-      transition: background-color 0s; }
+      -webkit-transition: background-color 0s;
+              transition: background-color 0s; }
     .picchu button[disabled]:hover, .picchu button[disabled]:focus, .picchu .button[disabled]:hover, .picchu .button[disabled]:focus, .picchu .button[disabled]:hover, .picchu .button[disabled]:focus {
       background-color: #e4e4e4;
       color: #919191; }
@@ -2964,7 +2966,9 @@ img {
     display: inline-block;
     font-size: 15px;
     color: #2F2F2F;
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     box-sizing: border-box; }
   .picchu label.disabled {
     color: #c8c8c8; }
@@ -3021,7 +3025,9 @@ img {
       display: inline-block;
       font-size: 15px;
       color: #2F2F2F;
-      appearance: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
       border: 1px solid #767676;
       position: relative;
       padding: 0.4667em 2.8em 0.4667em 0.55em;
@@ -3074,7 +3080,10 @@ img {
       margin: 0 0.2em -0.3em 0;
       background-color: #FFFFFF;
       font-size: 15px;
-      user-select: none; }
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none; }
     .picchu label.checkbox input,
     .picchu label.radio input,
     .picchu label.toggle input {
@@ -3135,7 +3144,8 @@ img {
     width: 44px;
     height: 22px;
     border-radius: 1em;
-    transition: background-color 0.2s; }
+    -webkit-transition: background-color 0.2s;
+            transition: background-color 0.2s; }
     .picchu label.toggle .custom-control:before {
       content: '';
       position: absolute;
@@ -3147,7 +3157,8 @@ img {
       height: 14px;
       border-radius: 50%;
       background-color: #2F2F2F;
-      transition: left 0.5s; }
+      -webkit-transition: left 0.5s;
+              transition: left 0.5s; }
   .picchu label.toggle input:checked ~ .custom-control {
     background-color: #0078D7;
     border-color: #0078D7; }
@@ -3189,7 +3200,9 @@ img {
     z-index: 0;
     margin-right: 0.25em; }
   .picchu input[type=range].slider {
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     width: 100%;
     margin: 3px 0; }
   .picchu input[type=range].slider:focus {
@@ -3216,7 +3229,8 @@ img {
     border-radius: 50px;
     background: #0078D7;
     cursor: pointer;
-    appearance: none;
+    -webkit-appearance: none;
+            appearance: none;
     margin-top: -3px; }
   .picchu input[type=range].slider::-webkit-slider-thumb:hover {
     background: #000000; }
@@ -3398,6 +3412,7 @@ img {
           @media screen and (min-width: 768px) {
             .picchu .hero.inside-text .hero-banner.black-bg-grad:before,
             .picchu .hero.inside-text .hero-carousel .hero-carousel-slide.black-bg-grad:before {
+              background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
               background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); } }
       .picchu .hero.inside-text .hero-banner.white-bg-grad,
       .picchu .hero.inside-text .hero-carousel .hero-carousel-slide.white-bg-grad {
@@ -3408,6 +3423,7 @@ img {
           @media screen and (min-width: 768px) {
             .picchu .hero.inside-text .hero-banner.white-bg-grad:before,
             .picchu .hero.inside-text .hero-carousel .hero-carousel-slide.white-bg-grad:before {
+              background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
               background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); } }
       .picchu .hero.inside-text .hero-banner.black-bgc:before,
       .picchu .hero.inside-text .hero-carousel .hero-carousel-slide.black-bgc:before {
@@ -3463,6 +3479,7 @@ img {
       @media screen and (min-width: 768px) and (min-width: 768px) {
         .picchu .hero.popout-text .hero-banner.black-bg-grad:before,
         .picchu .hero.popout-text .hero-carousel .hero-carousel-slide.black-bg-grad:before {
+          background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
           background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); } }
       @media screen and (min-width: 768px) {
           .picchu .hero.popout-text .hero-banner.white-bg-grad,
@@ -3474,6 +3491,7 @@ img {
       @media screen and (min-width: 768px) and (min-width: 768px) {
         .picchu .hero.popout-text .hero-banner.white-bg-grad:before,
         .picchu .hero.popout-text .hero-carousel .hero-carousel-slide.white-bg-grad:before {
+          background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
           background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); } }
       @media screen and (min-width: 768px) {
           .picchu .hero.popout-text .hero-banner.black-bgc:before,
@@ -3539,11 +3557,13 @@ img {
           color: white; }
           .picchu .banner.black-bg-grad:before {
             background: rgba(0, 0, 0, 0.65);
+            background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%);
             background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, transparent 80%, transparent 100%); }
         .picchu .banner.white-bg-grad {
           color: #2F2F2F; }
           .picchu .banner.white-bg-grad:before {
             background: rgba(255, 255, 255, 0.65);
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
             background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%); }
         .picchu .banner.black-bgc:before {
           background: rgba(0, 0, 0, 0.65); }
