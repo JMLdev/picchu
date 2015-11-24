@@ -76,10 +76,11 @@ module.exports = function (grunt) {
 			options: {
 				partials: ['src/doc/partials/**/*.hbs'],
 				layout: ['src/doc/layouts/default.hbs'],
+				assets: 'dist',
+				jsAssets: 'dist/assets/js',
 				data: 'data/*.json',
 			},
 			pages: {
-
 				expand: true,
 				flatten: false,
 				cwd: 'src/doc',
