@@ -77,7 +77,6 @@ module.exports = function (grunt) {
 				partials: ['src/doc/partials/**/*.hbs'],
 				layout: ['src/doc/layouts/default.hbs'],
 				assets: 'dist',
-				jsAssets: 'dist/assets/js',
 				data: 'data/*.json',
 			},
 			pages: {
@@ -139,6 +138,13 @@ module.exports = function (grunt) {
 				src: 'assets/**/*',
 				dest: 'dist/'
 			},
+			scripts: {
+				expand: true,
+				flatten: true,
+				cwd: 'src/',
+				src: 'js/**/*',
+				dest: 'dist/'
+			}
 		}
     });
     // Set Grunt tasks
